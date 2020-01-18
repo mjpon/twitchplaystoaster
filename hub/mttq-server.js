@@ -1,12 +1,12 @@
 var mqtt = require('mqtt')
 
 class MTTQ{
-   constructor(ip){
-      this.client  = mqtt.connect(ip)
+   constructor(address){
+      this.client  = mqtt.connect(address)
       this.client.on('connect', function () {
          this.client.subscribe('presence', function (err) {
             if (!err) {
-               this.client.publish('presence', 'Hello mqtt')
+               this.client.publish('presence', address)
             }
          })
       })
