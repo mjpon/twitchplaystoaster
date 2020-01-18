@@ -13,7 +13,7 @@ var jsonContent = JSON.parse(contents)
 
 class TwitchBot{
    constructor(){
-      this.client = new tmi.Client({
+      this.client = new tmi.Clieånt({
          options: { debug: true },
          connection: {
             reconnect: true,
@@ -23,7 +23,7 @@ class TwitchBot{
             username: 'itsatoasterucsc',
             password: 'oauth:s9dlg4e1d7b2755k3ly8n0ciycjg1v'
          },
-         channels: ['FrainbreezeRU']
+         channels: [ 'cruzhacks',  'NikEh30', 'fl0m']
       });
 
       this.client.connect();
@@ -31,10 +31,9 @@ class TwitchBot{
       this.client.on('message', (channel, tags, message, self) => {
          if(self) return;
          var i;
-         // const intervalObj = setInterval(() => {
          for(i = 0; i< jsonContent.length; i++){
-            if( jsonContent.commands[i].name === "!" + message.toLowerCase()){
-               this.client.say(channel, + jsonContent.commands[i].result);
+            if( jsonContent.commands[i].name === message.toLowerCase()){
+               this.client.say(channel, jsonContent.commands[i].result);
                console.log("hcomarde");
             }else if( message.toLowerCase().contains(jsonContent.commands[i].name)){
                this.client.say(channel, jsonContent.commands[i].result);
@@ -42,12 +41,7 @@ class TwitchBot{
             }
          }
 
-         // }, 1000);
-
-
-     
-
-         if(message.toLowerCase() === '!hello') {
+         if(message.toLowerCase() === 'hello') {
             this.client.say(channel, `@${tags.username}, heya!`);
             console.log("hammond you moron")
          }
