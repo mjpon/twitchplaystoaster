@@ -30,37 +30,29 @@ class TwitchBot{
 
       this.client.on('message', (channel, tags, message, self) => {
          if(self) return;
+         var i;
+         for(i = 0; i< jsonContent.length; i++){
+            if( jsonContent.commands[i].name === message.toLowerCase()){
+               this.client.say(channel, jsonContent.commands[i].result);
+               console.log("hcomarde");
+            }else if( message.toLowerCase().contains(jsonContent.commands[i].name)){
+               this.client.say(channel, jsonContent.commands[i].result);
+               console.log("hcomarde");
+            }
+         }
+
          if(message.toLowerCase() === 'hello') {
             this.client.say(channel, `@${tags.username}, heya!`);
             console.log("hammond you moron")
          }
-         if(message.toLowerCase() === 'no') {
-            this.client.say(channel, `@${tags.username}, heya!`);
-            console.log("hammond you moron")
-         }
-         if(message.toLowerCase() === 'is') {
-            this.client.say(channel, `@${tags.username}, heya!`);
-            console.log("hammond you moron")
-         }
-         if(message.toLowerCase() === 'you') {
-            this.client.say(channel, `@${tags.username}, heya!`);
-            console.log("hammond you moron")
-         }
+         
 
          // if(message.toLowerCase().indexOf("f") > -1 ) {
          //    this.client.say(channel, `@${tags.username}, heya!`);
          //    console.log("hammond you moron")
          // }
          // jsonContent
-         console.log(jsonContent.commands[1].name);
-         if(message.toLowerCase() ===  jsonContent.commands[1].name) {
-            this.client.say(channel, `@${tags.username}, toast!`);
-            console.log("hammond you moron")
-         }
-         if(message.toLowerCase() === 'he') {
-            this.client.say(channel, `@${tags.username}, heya!`);
-            console.log("hammond you moron")
-         }
+ 
 
          if(message.toLowerCase() === 'f10mB') {
             this.client.say(channel, `@${tags.username}, YAHHOO!`);

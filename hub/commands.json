@@ -21,6 +21,10 @@
 			"result":"test"
         },
         {
+			"name":"i",
+			"result":"test"
+        },
+        {
             "name":"Forward",
 			"result":"command"
         }
