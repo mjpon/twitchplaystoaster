@@ -20,7 +20,7 @@ class Server{
        })
 
        this.app.get('/donate', function (req, res){
-          res.json({"donations":bot1.donate()})
+          res.json({"donations":bot1.returnDonate()})
        })
         
       this.app.listen(1200,function(){
