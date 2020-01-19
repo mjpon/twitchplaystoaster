@@ -53,13 +53,13 @@ class TwitchBot{
 
    returnCommands(){
       var temp = this.commands
-      // this.commands = []
+      this.commands = []
       return temp
    }
 
    returnCommands2(){
       var temp = this.commands2
-      // this.commands2 = []
+      this.commands2 = []
       return temp
    }
 
