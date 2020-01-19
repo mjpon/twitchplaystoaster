@@ -1,6 +1,9 @@
 const express = require('express')
 const TwitchBot = require('./twitch-bot');//import our class
 var bot1 = new TwitchBot.tb();//generates a new instance of our class
+const BadBot = require('./anarchyBot');//import our class
+var bot2 = new BadBot.tb();//generates a new instance of our class
+
 
 class Server{
    constructor(){

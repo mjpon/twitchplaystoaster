@@ -1,11 +1,11 @@
 {
     
     "!hello":"hello person",
-    "!Aforward":"Car A: 'Going Forward!'",
-    "!Aleft":"Car A: 'Turning Left!'",
-    "!Aright":"Car A: 'Turning Right!'",
-    "!Bforward":"Car B: 'Going Forward!'",
-    "!Bleft":"Car B: 'Turning Left!'",
-    "!Bright":"Car B: 'Turning Right!'"
+    "!Aforward":"Portsche says: 'Going Forward, Gotta Go Fast!'",
+    "!Aleft":"Portsche says: 'Turning Left, Skrrt Skrrt!'",
+    "!Aright":"Portsche says: 'Turning Right, Doot Doot!'",
+    "!Bforward":"The Roastmaster says: 'Going Forward, Eat My Crumbs!'",
+    "!Bleft":"The Roastmaster says: 'Turning Left, Get Roasted!'",
+    "!Bright":"The Roastmaster says: 'Turning Right, Get Rekt Scrubs!'"
     
 }
