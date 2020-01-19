@@ -1,51 +1,37 @@
+import threading, sys
+
 #DC MOTOR
 import RPi.GPIO as GPIO
 import time
 GPIO.setmode(GPIO.BOARD)
 GPIO.setwarnings(False)
-GPIO.setup(16,GPIO.OUT)
-GPIO.output(16,GPIO.HIGH)
-time.sleep(3)
-GPIO.output(16,GPIO.LOW)
 
-#SERVO MOTOR
-GPIO.setup(11,GPIO.OUT)
-p = GPIO.PWM(11,50)
-p.start(0)
-p.ChangeDutyCycle(3)
-time.sleep(3)
-p.ChangeDutyCycle(12)
-time.sleep(3)
-p.stop()
+def spinMotor(pin):
+	GPIO.setup(pin,GPIO.OUT)
+	GPIO.output(pin,GPIO.HIGH)
+	time.sleep(3)
+	GPIO.output(pin,GPIO.LOW)
 
-#STEPPER
-control_pins = [7,11,13,15]
+if __name__ == "__main__":
 
-for pin in control_pins:
-	GPIO.setup(pin, GPIO.OUT)
-	GPIO.output(pin,0)
+	left = 11
+	right = 16
 
-halfstep_seq = [
-	[1,0,0,0],
-	[1,1,0,0],
-	[0,1,0,0],
-	[0,1,1,0],
-	[0,0,1,0],
-	[0,0,1,1],
-	[0,0,0,1],
-	[1,0,0,1]
-]
+	args = str(sys.argv[1])
+	print(args)
 
-for i in range(512):
-	for half in range(8):
-		for pin in range(4):
-			GPIO.output(control_pins[pin],halfstep_seq[half][pin])
-	time.sleep(0.001)
+	if args == "forward":
+		t1 = threading.Thread(target=spinMotor, args=(11,))
+		t2 = threading.Thread(target=spinMotor, args=(16,))
+		t1.start()
+		t2.start()
+		t1.join()
+		t2.join()
+	elif args == "left":
+		spinMotor(left)
+	elif args == "right":
+		spinMotor(right)
 
-GPIO.cleanup()	
-
-
-
-
-
-
+	##TODOS
+	##ADD SPECIAL
+	##ADD LEDS
