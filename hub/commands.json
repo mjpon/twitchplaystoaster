@@ -1,11 +1,7 @@
 {
-    
-    "!hello":"hello person",
-    "!Aforward":"Portsche says: 'Going Forward, Gotta Go Fast!'",
-    "!Aleft":"Portsche says: 'Turning Left, Skrrt Skrrt!'",
-    "!Aright":"Portsche says: 'Turning Right, Doot Doot!'",
-    "!Bforward":"The Roastmaster says: 'Going Forward, Eat My Crumbs!'",
-    "!Bleft":"The Roastmaster says: 'Turning Left, Get Roasted!'",
-    "!Bright":"The Roastmaster says: 'Turning Right, Get Rekt Scrubs!'"
+    "!aforward":"Portsche says: 'Going Forward, Gotta Go Fast!'",
+    "!aleft":"Portsche says: 'Turning Left, Skrrt Skrrt!'",
+    "!aright":"Portsche says: 'Turning Right, Doot Doot!'"
+
     
 }
