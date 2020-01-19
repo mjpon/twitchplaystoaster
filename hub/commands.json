@@ -1,7 +1,11 @@
 {
     
-    "!test":"hello person",
-    "!back":"move backwards",
-    "!forward":"move forward"
+    "!hello":"hello person",
+    "!Aforward":"Car A: 'Going Forward!'",
+    "!Aleft":"Car A: 'Turning Left!'",
+    "!Aright":"Car A: 'Turning Right!'",
+    "!Bforward":"Car B: 'Going Forward!'",
+    "!Bleft":"Car B: 'Turning Left!'",
+    "!Bright":"Car B: 'Turning Right!'"
     
 }
