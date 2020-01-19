@@ -34,7 +34,7 @@ class BadBot{
         const randomValue = values[parseInt(Math.random() * values.length)]
         const key = Object.keys(jsonContent).find(key => jsonContent[key] === randomValue);
         this.client.say('itsatoasterucsc', key)
-      }, 8000);
+      }, 1000);
       
 
 
