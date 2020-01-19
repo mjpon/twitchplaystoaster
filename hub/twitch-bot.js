@@ -25,7 +25,7 @@ class TwitchBot{
             username: 'itsatoasterucsc',
             password: 'oauth:s9dlg4e1d7b2755k3ly8n0ciycjg1v'
          },
-         channels: ['PAX', "itsatoasterucsc"]
+         channels: ["itsatoasterucsc"]
       });
 
       this.client.connect();
@@ -33,7 +33,9 @@ class TwitchBot{
       this.client.on('message', (channel, tags, message, self) => {
          try{
             if(jsonContent[message.toLowerCase()]){
-               this.client.say(channel,jsonContent[message.toLowerCase()]) 
+               this.client.say(channel,jsonContent[message.toLowerCase()])
+               // const pattA = '/A/\w+'
+               // const pattB = '/B/\w+'
                this.commands.push(jsonContent[message.toLowerCase()])
                this.commands2.push(jsonContent[message.toLowerCase()])
             }
