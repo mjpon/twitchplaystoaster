@@ -1,5 +1,8 @@
 # twitchplaystoaster
 
+**PICTURES OF THE PROCESS**
+https://photos.google.com/share/AF1QipPq0WwM0UsPSEr4gR-eUclu_fXumJ3FxG-lyGoQsqqtLmc5XtspDKD9tBdJEkG4KA?key=Y3dUTUVSWnB0LVBvd1BOellvcWE4SWo4Z2x3WS1R
+
 # Inspiration
 We love toasters. We love Twitch.tv. We love coding.
 
