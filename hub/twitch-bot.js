@@ -13,6 +13,7 @@ var jsonContent = JSON.parse(contents)
 
 class TwitchBot{
    constructor(){
+      this.commands = [];
       this.client = new tmi.Client({
          options: { debug: true },
          connection: {
@@ -32,6 +33,7 @@ class TwitchBot{
          try{
             if(jsonContent[message.toLowerCase()]){
                this.client.say(channel,jsonContent[message.toLowerCase()])
+               this.commands.push(jsonContent[message.toLowerCase()])
             }
          }catch(e){
             this.client.say(channel, `twitch bot error`);
@@ -42,6 +44,12 @@ class TwitchBot{
             console.log("hammond you moron")
          }
       });
+   }
+
+   returnCommands(){
+      var temp = this.commands
+      this.commands = []
+      return temp
    }
 
 
