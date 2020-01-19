@@ -23,16 +23,17 @@ class BadBot{
             username: 'itsatoasterucsc',
             password: 'oauth:s9dlg4e1d7b2755k3ly8n0ciycjg1v'
          },
-         channels: ['itsatoasterucsc']
+         channels: ['cruzhacks']
       });
 
       this.client.connect();
 
-        const act(jsonContent) => {
-            const values = Object.values(jsonContent)
-            const randomValue = values[parseInt(Math.random() * values.length)]
-            console.log(randomValue)
-        };
+      const intervalObj = setInterval(() => {
+        const values = Object.values(jsonContent)
+        const randomValue = values[parseInt(Math.random() * values.length)]
+        this.client.say('cruzhacks', randomValue)
+      }, 8000);
+      
 
     //   this.client.on('message', (channel, tags, message, self) => {
 
@@ -50,4 +51,4 @@ class BadBot{
 
 }
 
-module.exports.tb = TwitchBot;
+module.exports.tb = BadBot;
