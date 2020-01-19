@@ -24,7 +24,7 @@ class TwitchBot{
             username: 'itsatoasterucsc',
             password: 'oauth:s9dlg4e1d7b2755k3ly8n0ciycjg1v'
          },
-         channels: ['itsatoasterucsc']
+         channels: ['PAX']
       });
 
       this.client.connect();
@@ -35,6 +35,7 @@ class TwitchBot{
                this.client.say(channel,jsonContent[message.toLowerCase()])
                this.commands.push(jsonContent[message.toLowerCase()])
             }
+            // this.commands.push(message.toLowerCase());
          }catch(e){
             this.client.say(channel, `twitch bot error`);
          }
