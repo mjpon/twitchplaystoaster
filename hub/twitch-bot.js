@@ -29,50 +29,21 @@ class TwitchBot{
       this.client.connect();
 
       this.client.on('message', (channel, tags, message, self) => {
-         if(self) return;
-         var i;
-         // const intervalObj = setInterval(() => {
-         for(i = 0; i< jsonContent.length; i++){
-            if( jsonContent.commands[i].name === "!" + message.toLowerCase()){
-               this.client.say(channel, + jsonContent.commands[i].result);
-               console.log("hcomarde");
-            }else if( message.toLowerCase().contains(jsonContent.commands[i].name)){
-               this.client.say(channel, jsonContent.commands[i].result);
-               console.log("hcomarde");
+         try{
+            if(jsonContent[message.toLowerCase()]){
+               this.client.say(channel,jsonContent[message.toLowerCase()])
             }
+         }catch(e){
+            this.client.say(channel, `twitch bot error`);
          }
-
-         // }, 1000);
-
-
-     
 
          if(message.toLowerCase() === '!hello') {
             this.client.say(channel, `@${tags.username}, heya!`);
             console.log("hammond you moron")
          }
-         
-
-         // if(message.toLowerCase().indexOf("f") > -1 ) {
-         //    this.client.say(channel, `@${tags.username}, heya!`);
-         //    console.log("hammond you moron")
-         // }
-         // jsonContent
- 
-
-         if(message.toLowerCase() === 'f10mB') {
-            this.client.say(channel, `@${tags.username}, YAHHOO!`);
-            console.log("hammond you bloithering idiot")
-         }
-
-         if(message.toLowerCase() === 'fl0mHeart') {
-            this.client.say(channel, `@${tags.username}, YAHHOO!`);
-            console.log("hammond you bafoon")
-         }
-
       });
    }
-   
+
 
 }
 
