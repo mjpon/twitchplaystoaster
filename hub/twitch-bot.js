@@ -23,7 +23,7 @@ class TwitchBot{
             username: 'itsatoasterucsc',
             password: 'oauth:s9dlg4e1d7b2755k3ly8n0ciycjg1v'
          },
-         channels: ['FrainbreezeRU']
+         channels: ['itsatoasterucsc']
       });
 
       this.client.connect();
