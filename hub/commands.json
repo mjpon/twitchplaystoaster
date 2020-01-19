@@ -1,5 +1,7 @@
 {
+    
     "!test":"hello person",
     "!back":"move backwards",
     "!forward":"move forward"
+    
 }
