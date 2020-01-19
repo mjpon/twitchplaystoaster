@@ -1,6 +1,9 @@
 const express = require('express')
 const TwitchBot = require('./twitch-bot');//import our class
 var bot1 = new TwitchBot.tb();//generates a new instance of our class
+const BadBot = require('./anarchyBot');//import our class
+var bot2 = new BadBot.tb();//generates a new instance of our class
+
 
 class Server{
    constructor(){
@@ -16,8 +19,8 @@ class Server{
          res.json({"commands":bot1.returnCommands2()})
        })
         
-      this.app.listen(3000,function(){
-         console.log("connected and open on port " + 3000)
+      this.app.listen(1200,function(){
+         console.log("connected and open on port " + 1200)
       })
    }
 

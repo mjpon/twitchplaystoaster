@@ -13,6 +13,7 @@ var jsonContent = JSON.parse(contents)
 
 class BadBot{
    constructor(){
+      this.command = []
       this.client = new tmi.Client({
          options: { debug: true },
          connection: {
@@ -23,7 +24,7 @@ class BadBot{
             username: 'itsatoasterucsc',
             password: 'oauth:s9dlg4e1d7b2755k3ly8n0ciycjg1v'
          },
-         channels: ['cruzhacks']
+         channels: ['itsatoasterucsc']
       });
 
       this.client.connect();
@@ -31,19 +32,10 @@ class BadBot{
       const intervalObj = setInterval(() => {
         const values = Object.values(jsonContent)
         const randomValue = values[parseInt(Math.random() * values.length)]
-        this.client.say('cruzhacks', randomValue)
+        const key = Object.keys(jsonContent).find(key => jsonContent[key] === randomValue);
+        this.client.say('itsatoasterucsc', key)
       }, 8000);
       
-
-    //   this.client.on('message', (channel, tags, message, self) => {
-
-            
-
-    //     if(message.toLowerCase() === '!hello') {
-    //         this.client.say(channel, `@${tags.username}, heya from anarchy!`);
-    //         console.log("hammond you moron")
-    //      }
-    //   });
 
 
    }
