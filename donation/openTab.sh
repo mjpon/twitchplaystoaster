@@ -1,1 +1,1 @@
-open -na "Google Chrome" --args --new-window "chrome://newtab"
+sudo open -na "Google Chrome" --args --new-window "chrome://newtab"
