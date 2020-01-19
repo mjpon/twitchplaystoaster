@@ -18,6 +18,10 @@ class Server{
          
          res.json({"commands":bot1.returnCommands2()})
        })
+
+       this.app.get('/donate', function (req, res){
+          res.json({"donations":bot1.donate()})
+       })
         
       this.app.listen(1200,function(){
          console.log("connected and open on port " + 1200)
