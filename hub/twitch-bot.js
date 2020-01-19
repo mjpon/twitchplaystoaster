@@ -13,6 +13,8 @@ var jsonContent = JSON.parse(contents)
 
 class TwitchBot{
    constructor(){
+      this.commands = [];
+      this.commands2 = [];
       this.client = new tmi.Client({
          options: { debug: true },
          connection: {
@@ -23,56 +25,42 @@ class TwitchBot{
             username: 'itsatoasterucsc',
             password: 'oauth:s9dlg4e1d7b2755k3ly8n0ciycjg1v'
          },
-         channels: ['FrainbreezeRU']
+         channels: ['PAX']
       });
 
       this.client.connect();
 
       this.client.on('message', (channel, tags, message, self) => {
-         if(self) return;
-         var i;
-         // const intervalObj = setInterval(() => {
-         for(i = 0; i< jsonContent.length; i++){
-            if( jsonContent.commands[i].name === "!" + message.toLowerCase()){
-               this.client.say(channel, + jsonContent.commands[i].result);
-               console.log("hcomarde");
-            }else if( message.toLowerCase().contains(jsonContent.commands[i].name)){
-               this.client.say(channel, jsonContent.commands[i].result);
-               console.log("hcomarde");
+         try{
+            if(jsonContent[message.toLowerCase()]){
+               this.client.say(channel,jsonContent[message.toLowerCase()])
+               this.commands.push(jsonContent[message.toLowerCase()])
+               this.commands2.push(jsonContent[message.toLowerCase()])
             }
+            // this.commands.push(message.toLowerCase());
+         }catch(e){
+            this.client.say(channel, `twitch bot error`);
          }
-
-         // }, 1000);
-
-
-     
 
          if(message.toLowerCase() === '!hello') {
             this.client.say(channel, `@${tags.username}, heya!`);
             console.log("hammond you moron")
          }
-         
-
-         // if(message.toLowerCase().indexOf("f") > -1 ) {
-         //    this.client.say(channel, `@${tags.username}, heya!`);
-         //    console.log("hammond you moron")
-         // }
-         // jsonContent
- 
-
-         if(message.toLowerCase() === 'f10mB') {
-            this.client.say(channel, `@${tags.username}, YAHHOO!`);
-            console.log("hammond you bloithering idiot")
-         }
-
-         if(message.toLowerCase() === 'fl0mHeart') {
-            this.client.say(channel, `@${tags.username}, YAHHOO!`);
-            console.log("hammond you bafoon")
-         }
-
       });
    }
-   
+
+   returnCommands(){
+      var temp = this.commands
+      this.commands = []
+      return temp
+   }
+
+   returnCommands2(){
+      var temp = this.commands2
+      this.commands = []
+      return temp
+   }
+
 
 }
 
