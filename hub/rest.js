@@ -6,9 +6,14 @@ class Server{
    constructor(){
       this.app = express()
 
-      this.app.get('/', function (req, res) {
+      this.app.get('/1', function (req, res) {
          
          res.json({"commands":bot1.returnCommands()})
+       })
+
+       this.app.get('/2', function (req, res) {
+         
+         res.json({"commands":bot1.returnCommands2()})
        })
         
       this.app.listen(3000,function(){
